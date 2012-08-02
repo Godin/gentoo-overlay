@@ -1,0 +1,11 @@
+# http://jira.codehaus.org/browse/SONAR-3221
+=dev-util/sonar-bin-2.13
+
+# http://jira.codehaus.org/browse/SONAR-3442
+=dev-util/sonar-bin-3.0
+
+# http://jira.codehaus.org/browse/SONAR-3584
+=dev-util/sonar-bin-3.1
+
+# Release candidate
+>=dev-util/sonar-bin-3.2
