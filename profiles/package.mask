@@ -8,4 +8,4 @@
 =dev-util/sonar-bin-3.1
 
 # Release candidate
->=dev-util/sonar-bin-3.2
+>dev-util/sonar-bin-3.2
