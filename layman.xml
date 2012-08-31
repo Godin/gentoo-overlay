@@ -11,7 +11,6 @@
     </owner>
     <source type="git">git://github.com/Godin/gentoo-overlay.git</source>
     <source type="git">https://github.com/Godin/gentoo-overlay.git</source>
-    <source type="git">git+ssh://git@github.com:Godin/gentoo-overlay.git</source>
     <feed>https://github.com/Godin/gentoo-overlay/commits/master.atom</feed>
   </repo>
 </repositories>
