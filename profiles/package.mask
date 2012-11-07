@@ -10,5 +10,8 @@
 # http://jira.codehaus.org/browse/SONAR-3701
 =dev-util/sonar-bin-3.2
 
+# http://jira.codehaus.org/browse/SONAR/fixforversion/18920
+=dev-util/sonar-bin-3.3
+
 # Release candidate
 >=dev-util/sonar-bin-3.4
