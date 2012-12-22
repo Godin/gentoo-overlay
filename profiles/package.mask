@@ -17,4 +17,4 @@
 =dev-util/sonar-bin-3.3.1
 
 # Release candidate
->=dev-util/sonar-bin-3.4
+>=dev-util/sonar-bin-3.5
