@@ -61,6 +61,6 @@ src_install() {
     doenvd "${T}/25sonar"
 
 	# Set initd environments
-	newconfd "${FILESDIR}"/sonar.confd sonar
+    newconfd "${FILESDIR}"/sonar.confd sonar
 
 }
