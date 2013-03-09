@@ -12,7 +12,7 @@ HOMEPAGE="http://defunkt.io/hub/"
 SRC_URI="https://github.com/${GITHUB_USER}/${GITHUB_REPO}/tarball/${GITHUB_HASH} -> ${MY_P}.tar.gz"
 
 S="${WORKDIR}/${MY_P}"
-LICENSE=""
+LICENSE="MIT"
 SLOT="0"
 
 KEYWORDS="x86 amd64"
