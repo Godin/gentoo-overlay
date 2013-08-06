@@ -19,7 +19,8 @@ KEYWORDS="x86 amd64"
 
 IUSE=""
 
-RDEPEND="dev-vcs/git"
+RDEPEND="dev-lang/ruby
+	dev-vcs/git"
 
 src_install() {
     exeinto /usr/bin
