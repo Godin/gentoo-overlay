@@ -25,6 +25,9 @@
 # http://jira.codehaus.org/browse/SONAR-4503
 =dev-util/sonar-bin-3.6.1
 
+# http://jira.codehaus.org/browse/SONAR-4542
+=dev-util/sonar-bin-3.6.2
+
 # http://jira.codehaus.org/browse/SONAR-4211
 =dev-util/sonar-bin-3.5
 
