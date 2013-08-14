@@ -31,9 +31,6 @@
 # http://jira.codehaus.org/browse/SONAR-4211
 =dev-util/sonar-bin-3.5
 
-# Release candidate
->=dev-util/sonar-bin-3.7
-
 # https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2013-01-04
 <=dev-util/jenkins-bin-1.480.1
 
