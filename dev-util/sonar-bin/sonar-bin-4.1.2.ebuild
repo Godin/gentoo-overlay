@@ -1,4 +1,6 @@
-inherit java-pkg-2
+EAPI=5
+
+inherit java-pkg-2 user
 
 DESCRIPTION="SonarQube is an open platform to manage code quality."
 HOMEPAGE="http://sonarsource.org/"
@@ -33,7 +35,7 @@ src_unpack() {
     # TODO remove unneded files
 
     # Fix permissions
-    chmod -R a-x,a+X conf data extensions extras lib war COPYING
+    chmod -R a-x,a+X conf data extensions lib web COPYING
 
     # Fix EOL in configuration files
     for i in conf/* ; do
@@ -44,7 +46,7 @@ src_unpack() {
 
 src_install() {
     insinto ${INSTALL_DIR}
-    doins -r bin conf data extensions extras lib logs war COPYING
+    doins -r bin conf data extensions lib logs web COPYING
 
     newinitd "${FILESDIR}/init.sh" sonar
 
