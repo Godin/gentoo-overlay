@@ -1,11 +1,13 @@
-inherit java-pkg-2
+EAPI=5
 
-DESCRIPTION="Sonar is an open platform to manage code quality."
+inherit java-pkg-2 user
+
+DESCRIPTION="SonarQube is an open platform to manage code quality."
 HOMEPAGE="http://sonarsource.org/"
 LICENSE="LGPL-3"
 MY_PV="${PV/_alpha/M}"
 MY_PV="${MY_PV/_rc/-RC}"
-MY_P="sonar-${MY_PV}"
+MY_P="sonarqube-${MY_PV}"
 SRC_URI="http://dist.sonar.codehaus.org/${MY_P}.zip"
 RESTRICT="mirror"
 SLOT="0"
@@ -33,7 +35,7 @@ src_unpack() {
     # TODO remove unneded files
 
     # Fix permissions
-    chmod -R a-x,a+X conf data extensions extras lib war COPYING
+    chmod -R a-x,a+X conf data extensions lib logs temp web COPYING
 
     # Fix EOL in configuration files
     for i in conf/* ; do
@@ -44,9 +46,10 @@ src_unpack() {
 
 src_install() {
     insinto ${INSTALL_DIR}
-    doins -r bin conf data extensions extras lib logs war COPYING
+    doins -r bin conf data extensions lib logs temp web COPYING
 
     newinitd "${FILESDIR}/init.sh" sonar
+    newconfd "${FILESDIR}"/sonar.confd sonar
 
     fowners -R sonar:sonar ${INSTALL_DIR}
 
