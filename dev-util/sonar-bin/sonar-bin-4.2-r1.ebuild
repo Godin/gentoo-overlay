@@ -17,7 +17,7 @@ IUSE=""
 S="${WORKDIR}/${MY_P}"
 
 DEPEND="app-arch/unzip"
-RDEPEND=">=virtual/jdk-1.5"
+RDEPEND=">=virtual/jdk-1.6"
 
 INSTALL_DIR="/opt/sonar"
 
