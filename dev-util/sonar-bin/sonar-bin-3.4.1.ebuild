@@ -59,4 +59,8 @@ src_install() {
     # Protect Sonar conf on upgrade
     echo "CONFIG_PROTECT=\"${INSTALL_DIR}/conf\"" > "${T}/25sonar" || die
     doenvd "${T}/25sonar"
+
+	# Set initd environments
+    newconfd "${FILESDIR}"/sonar.confd sonar
+
 }
