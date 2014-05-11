@@ -1,6 +1,2 @@
 # https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2013-01-04
 <=dev-util/jenkins-bin-1.480.1
-
-# https://issues.jenkins-ci.org/browse/JENKINS-18677
-=dev-util/jenkins-bin-1.522
-=dev-util/jenkins-bin-1.523
