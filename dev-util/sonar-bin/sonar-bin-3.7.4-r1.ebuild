@@ -11,7 +11,7 @@ MY_P="sonar-${MY_PV}"
 SRC_URI="http://dist.sonar.codehaus.org/${MY_P}.zip"
 RESTRICT="mirror"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="x86 amd64"
 IUSE=""
 
 S="${WORKDIR}/${MY_P}"
