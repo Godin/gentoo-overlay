@@ -43,6 +43,17 @@ start() {
         PARAMS="$PARAMS --accessLoggerClassName=winstone.accesslog.SimpleAccessLogger --simpleAccessLogger.format=combined --simpleAccessLogger.file=/var/log/jenkins/access_log"
     fi
 
+    local piddir="${JENKINS_PIDFILE%/*}"
+    if [ ! -d "$piddir" ] ; then
+        mkdir "$piddir" && \
+        chown $RUN_AS "$piddir"
+        rc=$?
+        if [ $rc -ne 0 ]; then
+            eerror "Directory $piddir for pidfile does not exist and cannot be created"
+            return 1
+            fi
+    fi
+
     ebegin "Starting ${SVCNAME}"
     start-stop-daemon --start --quiet --background \
         --make-pidfile --pidfile $JENKINS_PIDFILE \
