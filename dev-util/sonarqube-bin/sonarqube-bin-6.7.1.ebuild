@@ -35,7 +35,7 @@ src_unpack() {
     # TODO remove unneded files
 
     # Fix permissions
-    chmod -R a-x,a+X conf data extensions lib temp web COPYING
+    chmod -R a-x,a+X conf data elasticsearch extensions lib temp web COPYING
 
     # Fix EOL in configuration files
     for i in conf/* ; do
@@ -46,7 +46,13 @@ src_unpack() {
 
 src_install() {
     insinto ${INSTALL_DIR}
-    doins -r bin conf data extensions lib logs temp web COPYING
+    doins -r bin conf data elasticsearch extensions lib logs temp web COPYING 
+
+    insinto /etc/security/limits.d
+    newins "${FILESDIR}"/sonarqube-limits.conf 99-sonarqube.conf
+
+    insinto /etc/sysctl.d
+    newins "${FILESDIR}"/sonarqube-sysctl.conf 99-sonarqube.conf
 
     newinitd "${FILESDIR}/init.sh" sonar
     newconfd "${FILESDIR}"/sonar.confd sonar
@@ -59,7 +65,14 @@ src_install() {
     fperms 755 "${INSTALL_DIR}/bin/linux-x86-64/sonar.sh"
     fperms 755 "${INSTALL_DIR}/bin/linux-x86-64/wrapper"
 
+    fperms 755 "${INSTALL_DIR}/elasticsearch/bin/elasticsearch"
+
+    ewarn "You may need to run de following commands before starting sonar:"
+    ewarn "sysctl -w vm.max_map_count=262144"
+    ewarn "sysctl -w fs.file-max=65536"
+
     # Protect Sonar conf on upgrade
     echo "CONFIG_PROTECT=\"${INSTALL_DIR}/conf\"" > "${T}/25sonar" || die
     doenvd "${T}/25sonar"
+
 }
